@@ -11,6 +11,8 @@ export function Footer() {
     <footer style={{ background: 'var(--color-bg-inverse)', color: 'var(--color-text-inverse)', textAlign: 'center', padding: '40px 24px 32px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
       <div style={{ fontFamily: 'var(--font-display)', fontSize: 26 }}>loulink</div>
       <div style={{ fontFamily: 'var(--font-signature)', fontSize: 19, color: 'rgba(251,248,242,.55)' }}>con cariño, loulink</div>
+      <a href="/cotizacion.html" style={footerLinkStyle}>Cotización</a>
+      <a href="/cotizacion.pdf" download="loulink-cotizacion.pdf" style={footerLinkStyle}>Descargar cotización (PDF)</a>
       <a href="mailto:hola@loulink.mx" style={footerLinkStyle}>hola@loulink.mx</a>
       <div style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-xs)', color: 'rgba(251,248,242,.5)' }}>© 2026 loulink</div>
     </footer>
@@ -33,6 +35,8 @@ export function Footer() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <div style={footerHeadStyle}>Contacto</div>
             <Link to="/booking" style={footerLinkStyle}>Reservar sesión</Link>
+            <a href="/cotizacion.html" style={footerLinkStyle}>Cotización</a>
+            <a href="/cotizacion.pdf" download="loulink-cotizacion.pdf" style={footerLinkStyle}>Descargar cotización (PDF)</a>
             <span style={footerLinkStyle}>hola@loulink.mx</span>
           </div>
         </div>
