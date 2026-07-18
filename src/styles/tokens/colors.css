@@ -1,0 +1,52 @@
+:root{
+/* raw palette — hueso is the ONLY warm neutral. Everything else: pure neutral, chroma 0 */
+--ink-950:#1C1B1A;
+--ink-700:#454545;
+--ink-500:#6E6E6E;
+--ink-300:#ABABAB;
+--hueso:oklch(97.8% 0.005 75);
+--white:#FFFFFF;
+--gray-100:oklch(95% 0 0);
+--line-200:oklch(90.5% 0 0);
+--line-300:oklch(84.5% 0 0);
+--rose-300:#E6C6C2;
+--rose-500:#C98F8C;
+--rose-700:#A6635F;
+--terracotta-400:#C68A5E;
+--terracotta-600:#A8663D;
+--burgundy-600:#7A2E36;
+--burgundy-800:#551F26;
+--brick-500:#B3453B;
+
+/* semantic: surfaces */
+--color-bg-page:var(--hueso);
+--color-bg-surface:var(--white);
+--color-bg-surface-alt:var(--gray-100);
+--color-bg-inverse:var(--ink-950);
+
+/* semantic: text */
+--color-text-primary:var(--ink-950);
+--color-text-secondary:var(--ink-700);
+--color-text-muted:var(--ink-500);
+--color-text-inverse:var(--hueso);
+--color-text-accent:var(--burgundy-600);
+
+/* semantic: borders */
+--color-border:var(--line-200);
+--color-border-strong:var(--line-300);
+--color-border-inverse:rgba(251,248,242,0.24);
+
+/* semantic: accents */
+--color-accent-rose:var(--rose-500);
+--color-accent-rose-soft:var(--rose-300);
+--color-accent-rose-strong:var(--rose-700);
+--color-accent-terracotta:var(--terracotta-400);
+--color-accent-terracotta-strong:var(--terracotta-600);
+--color-accent-burgundy:var(--burgundy-600);
+--color-accent-burgundy-strong:var(--burgundy-800);
+
+/* semantic: state */
+--color-state-error:var(--brick-500);
+--color-state-error-bg:#F6E4E1;
+--color-focus-ring:rgba(122,46,54,0.28);
+}

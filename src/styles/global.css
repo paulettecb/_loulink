@@ -1,0 +1,30 @@
+@import './tokens/fonts.css';
+@import './tokens/base.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/radius.css';
+@import './tokens/effects.css';
+
+html{-webkit-text-size-adjust:100%}
+
+@media (max-width:719px){
+  body{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
+  input,select,textarea{font-size:16px !important}
+}
+
+@keyframes site-step-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes site-step-in-fade{from{opacity:0}to{opacity:1}}
+.step-in{animation:site-step-in 600ms var(--ease-editorial) both}
+@media (prefers-reduced-motion:reduce){.step-in{animation:site-step-in-fade 200ms linear both}}
+
+.hover-zoom{overflow:hidden}
+.hover-zoom img{transition:transform var(--duration-page) var(--ease-editorial)}
+.hover-zoom:hover img{transform:scale(1.045)}
+
+.scroll-x-clean{
+  scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,black 14px,black calc(100% - 28px),transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0,black 14px,black calc(100% - 28px),transparent 100%);
+}
+.scroll-x-clean::-webkit-scrollbar{display:none}
