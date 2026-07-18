@@ -15,10 +15,10 @@ const offerings = [
 ];
 
 const homeWork = [
-  { label: 'colibrí y libélula' },
-  { label: 'mariposas' },
-  { label: '11:11' },
-  { label: 'golondrina' },
+  { src: 'work-hummingbird-dragonfly', label: 'colibrí y libélula' },
+  { src: 'work-butterflies', label: 'mariposas' },
+  { src: 'work-numerals-1111', label: '11:11' },
+  { src: 'work-swallow', label: 'golondrina' },
 ];
 
 export default function Home({ embedded } = {}) {
@@ -100,7 +100,7 @@ export default function Home({ embedded } = {}) {
         <div style={{ maxWidth: 1120, margin: '0 auto', padding: '96px 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
           <Reveal>
             <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-              <Photo className="media-bw" label="Estación loulink montada en una recepción" alt="Estación loulink montada en una recepción" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <Photo className="media-bw" src="/images/booth-wedding-station.png" label="Estación loulink montada en una recepción" alt="Estación loulink montada en una recepción" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </Reveal>
           <Reveal delay={160}>
@@ -125,7 +125,7 @@ export default function Home({ embedded } = {}) {
               <Reveal key={w.label} delay={i * 130}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <div className="hover-zoom" style={{ width: '100%', aspectRatio: '1/1', borderRadius: 8, overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                    <Photo className="media-bw" label={w.label} alt={w.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <Photo className="media-bw" src={`/images/${w.src}.png`} label={w.label} alt={w.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <Tag tone="neutral">{w.label}</Tag>
                 </div>

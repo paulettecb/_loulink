@@ -21,9 +21,9 @@ const faqs = [
 ];
 
 const strip = [
-  { label: 'Escritura fine-line en la muñeca' },
-  { label: 'Colibrí y flor fine-line' },
-  { label: 'Numerales 19:43 fine-line' },
+  { src: 'work-script-wrist', label: 'Escritura fine-line en la muñeca' },
+  { src: 'work-hummingbird-flower', label: 'Colibrí y flor fine-line' },
+  { src: 'work-numerals-1943', label: 'Numerales 19:43 fine-line' },
 ];
 
 export default function Services({ embedded } = {}) {
@@ -44,7 +44,7 @@ export default function Services({ embedded } = {}) {
           {strip.map((s, i) => (
             <Reveal key={s.label} delay={i * 140}>
               <div className="hover-zoom" style={{ width: '100%', aspectRatio: '4/3', borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                <Photo className="media-bw" label={s.label} alt={s.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <Photo className="media-bw" src={`/images/${s.src}.png`} label={s.label} alt={s.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </Reveal>
           ))}

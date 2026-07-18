@@ -28,7 +28,7 @@ export default function About({ embedded } = {}) {
         </Reveal>
         <Reveal delay={170}>
           <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', overflow: 'hidden', borderRadius: m ? 'var(--radius-lg)' : 0 }}>
-            <Photo className="media-bw" label="Retrato de la tatuadora" alt="Retrato de la tatuadora" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 20%' }} />
+            <Photo className="media-bw" src="/images/portrait-artist-bw.png" label="Retrato de la tatuadora" alt="Retrato de la tatuadora" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 20%' }} />
             <div className="grain-overlay"></div>
           </div>
         </Reveal>
@@ -48,7 +48,7 @@ export default function About({ embedded } = {}) {
       <section style={{ maxWidth: 1120, margin: '0 auto', padding: m ? '56px 20px' : '96px 32px', display: 'grid', gridTemplateColumns: m ? '1fr' : '1fr 1.1fr', gap: m ? 24 : 64, alignItems: 'center' }}>
         <Reveal>
           <div style={{ width: '100%', aspectRatio: m ? '4/3' : '3/4', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-            <Photo className="media-bw" label="Sesión de tatuaje fine-line en el estudio" alt="Sesión de tatuaje fine-line en el estudio" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%' }} />
+            <Photo className="media-bw" src="/images/process-tattooing-bw.png" label="Sesión de tatuaje fine-line en el estudio" alt="Sesión de tatuaje fine-line en el estudio" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 30%' }} />
           </div>
         </Reveal>
         <Reveal delay={160}>
