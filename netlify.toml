@@ -2,6 +2,12 @@
   command = "npm run build"
   publish = "dist"
 
+# Pretty URL for the standalone quote page
+[[redirects]]
+  from = "/cotizacion"
+  to = "/cotizacion.html"
+  status = 200
+
 # SPA fallback — React Router handles the paths client-side
 [[redirects]]
   from = "/*"
