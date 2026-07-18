@@ -7,17 +7,17 @@ import { Footer } from '../components/Footer.jsx';
 import { Photo } from '../components/Photo.jsx';
 
 const items = [
-  { id: 1, cat: 'aves', label: 'colibrí y flor' },
-  { id: 2, cat: 'numeros', label: '11:11' },
-  { id: 3, cat: 'simbolos', label: 'ojo' },
-  { id: 4, cat: 'aves', label: 'golondrina' },
-  { id: 5, cat: 'palabras', label: 'escritura' },
-  { id: 6, cat: 'aves', label: 'mariposas' },
-  { id: 7, cat: 'simbolos', label: 'bota vaquera' },
-  { id: 8, cat: 'numeros', label: '19:43' },
-  { id: 9, cat: 'aves', label: 'colibrí y libélula' },
-  { id: 10, cat: 'palabras', label: 'made of magic' },
-  { id: 11, cat: 'simbolos', label: 'huellita' },
+  { id: 1, cat: 'aves', label: 'colibrí y flor', src: 'work-hummingbird-flower' },
+  { id: 2, cat: 'numeros', label: '11:11', src: 'work-numerals-1111' },
+  { id: 3, cat: 'simbolos', label: 'ojo', src: 'work-evil-eye' },
+  { id: 4, cat: 'aves', label: 'golondrina', src: 'work-swallow' },
+  { id: 5, cat: 'palabras', label: 'escritura', src: 'work-script-wrist' },
+  { id: 6, cat: 'aves', label: 'mariposas', src: 'work-butterflies' },
+  { id: 7, cat: 'simbolos', label: 'bota vaquera', src: 'work-cowboy-boot' },
+  { id: 8, cat: 'numeros', label: '19:43', src: 'work-numerals-1943' },
+  { id: 9, cat: 'aves', label: 'colibrí y libélula', src: 'work-hummingbird-dragonfly' },
+  { id: 10, cat: 'palabras', label: 'made of magic', src: 'work-camera-magic' },
+  { id: 11, cat: 'simbolos', label: 'huellita', src: 'work-paw-maki' },
 ];
 
 export default function Flash({ embedded } = {}) {
@@ -42,7 +42,7 @@ export default function Flash({ embedded } = {}) {
             <Reveal key={it.id} delay={(i % 4) * 110}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <div className="hover-zoom" style={{ width: '100%', aspectRatio: '1/1', borderRadius: 8, overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                  <Photo className="media-bw" label={it.label} alt={it.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                  <Photo className="media-bw" src={`/images/${it.src}.png`} label={it.label} alt={it.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                 </div>
                 <Tag tone="neutral">{it.label}</Tag>
               </div>

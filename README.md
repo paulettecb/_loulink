@@ -32,9 +32,17 @@ The design system ships 15 real studio photos in `assets/imagery/`, but the desi
 - `public/images/hero-hands-puppies-bw.jpg` (the homepage hero) ✅
 - `public/fonts/Farmhouse.otf` (the signature accent typeface) ✅
 
-The other 13 photos (artist portrait, tattooing process, wedding-booth station, and the 10 `work-*` finished-tattoo shots) are all PNGs above that cap, so they render as a labeled placeholder (`src/components/Photo.jsx`) instead of a broken image — same pattern the design system itself uses for its still-missing flash-art illustrations.
+The other 13 photos (artist portrait, tattooing process, wedding-booth station, and the 10 `work-*` finished-tattoo shots) are all PNGs above that cap. Their paths are already wired into the pages; until the files exist, `src/components/Photo.jsx` renders a labeled placeholder instead of a broken image.
 
-**To finish:** pull the 13 originals from the design project's `assets/imagery/` folder (via the Claude Design UI, or "Send to Netlify"/"Send to Adobe Express" which bundle images inline) and drop them into `public/images/` under their original names, then pass `src="/images/<name>.png"` into the corresponding `<Photo>` call in `src/pages/Home.jsx`, `About.jsx`, `Services.jsx`, and `Flash.jsx`.
+**To finish:** download the 13 originals from the design project's `assets/imagery/` folder and drop them into `public/images/` under these exact names — no code change needed, they appear on the next load:
+
+```
+booth-wedding-station.png    portrait-artist-bw.png       process-tattooing-bw.png
+work-butterflies.png         work-camera-magic.png        work-cowboy-boot.png
+work-evil-eye.png            work-hummingbird-dragonfly.png
+work-hummingbird-flower.png  work-numerals-1111.png       work-numerals-1943.png
+work-paw-maki.png            work-script-wrist.png
+```
 
 ## Development
 

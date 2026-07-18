@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ImageOff } from 'lucide-react';
 
 /**
- * Real photography from the design system arrives as large source files; only the
- * hero shot fit through the asset-sync channel used to build this app. Everywhere
- * else `src` is left unset on purpose — swap in the matching file from the Claude
- * Design project's `assets/imagery/` folder and this renders the real photo instead.
+ * Renders the photo at `src`, falling back to a labeled placeholder while the
+ * file doesn't exist yet in public/images/. The design system's photos are
+ * pre-wired by filename across the pages, so dropping the originals from the
+ * Claude Design project's `assets/imagery/` into `public/images/` makes them
+ * appear without any code change.
  */
 export function Photo({ src, alt = '', label, className, style, loading }) {
-  if (src) {
-    return <img src={src} alt={alt} className={className} style={style} loading={loading} />;
+  const [failed, setFailed] = useState(false);
+  useEffect(() => { setFailed(false); }, [src]);
+  if (src && !failed) {
+    return <img src={src} alt={alt} className={className} style={style} loading={loading} onError={() => setFailed(true)} />;
   }
   return (
     <div
