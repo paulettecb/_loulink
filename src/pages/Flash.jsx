@@ -42,7 +42,7 @@ export default function Flash({ embedded } = {}) {
             <Reveal key={it.id} delay={(i % 4) * 110}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <div className="hover-zoom" style={{ width: '100%', aspectRatio: '1/1', borderRadius: 8, overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                  <Photo className="media-bw" src={`/images/${it.src}.png`} label={it.label} alt={it.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                  <Photo className="media-bw" src={`/images/${it.src}.jpg`} label={it.label} alt={it.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                 </div>
                 <Tag tone="neutral">{it.label}</Tag>
               </div>

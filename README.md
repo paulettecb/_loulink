@@ -25,24 +25,11 @@ Editorial, intimate, quietly confident — see `src/styles` for the full token s
 
 Mobile (<720px) behaves app-like: fixed 5-tab bottom nav, compact footer, desktop-only sections hidden, full-width stacked CTAs — same breakpoint and behavior as the source kit's `useIsMobile`/`BottomNav`.
 
-## Known gap: photography
+## Photography
 
-The design system ships 15 real studio photos in `assets/imagery/`, but the design-sync channel used to pull files into this repo caps individual file reads at 256 KiB. Only two binary assets were small enough to come across intact:
+All 15 studio photos from the design system's `assets/imagery/` live in `public/images/`. The hero (`hero-hands-puppies-bw.jpg`) and the Farmhouse typeface came through the design-sync channel intact; the other 14 are JPEG copies supplied through chat (the sync channel caps file reads at 256 KiB, below the PNG originals' size), stored under the design system's original names with a `.jpg` extension.
 
-- `public/images/hero-hands-puppies-bw.jpg` (the homepage hero) ✅
-- `public/fonts/Farmhouse.otf` (the signature accent typeface) ✅
-
-The other 13 photos (artist portrait, tattooing process, wedding-booth station, and the 10 `work-*` finished-tattoo shots) are all PNGs above that cap. Their paths are already wired into the pages; until the files exist, `src/components/Photo.jsx` renders a labeled placeholder instead of a broken image.
-
-**To finish:** download the 13 originals from the design project's `assets/imagery/` folder and drop them into `public/images/` under these exact names — no code change needed, they appear on the next load:
-
-```
-booth-wedding-station.png    portrait-artist-bw.png       process-tattooing-bw.png
-work-butterflies.png         work-camera-magic.png        work-cowboy-boot.png
-work-evil-eye.png            work-hummingbird-dragonfly.png
-work-hummingbird-flower.png  work-numerals-1111.png       work-numerals-1943.png
-work-paw-maki.png            work-script-wrist.png
-```
+They're visually indistinguishable at the sizes the site renders, but if you ever want the pixel-identical originals, overwrite the `.jpg` files with same-named exports from the Claude Design project. `src/components/Photo.jsx` falls back to a labeled placeholder for any image path that fails to load, so a missing or misnamed file degrades gracefully instead of showing a broken image.
 
 ## Development
 
