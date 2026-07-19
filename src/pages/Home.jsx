@@ -4,6 +4,7 @@ import { HeartHandshake, Users, MapPin } from 'lucide-react';
 import { Eyebrow, Button, Card, Tag, Quote } from '../design-system/components/index.js';
 import { useIsMobile } from '../hooks/useIsMobile.js';
 import { Reveal, PageFade, SplitReveal } from '../lib/motion.jsx';
+import { SectionPager } from '../lib/SectionPager.jsx';
 import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Photo } from '../components/Photo.jsx';
@@ -31,6 +32,7 @@ export default function Home({ embedded } = {}) {
     <div style={{ background: 'var(--color-bg-page)' }}>
       {!embedded && <Nav active="home" />}
       <PageFade>
+      <SectionPager>
       {m ? (
       <section>
         <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', overflow: 'hidden' }}>
@@ -148,6 +150,7 @@ export default function Home({ embedded } = {}) {
           </div>
         </Reveal>
       </section>
+      </SectionPager>
       {!embedded && <Footer />}
       </PageFade>
     </div>

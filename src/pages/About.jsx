@@ -2,6 +2,7 @@ import React from 'react';
 import { Eyebrow } from '../design-system/components/index.js';
 import { useIsMobile } from '../hooks/useIsMobile.js';
 import { Reveal, PageFade } from '../lib/motion.jsx';
+import { SectionPager } from '../lib/SectionPager.jsx';
 import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Photo } from '../components/Photo.jsx';
@@ -18,6 +19,7 @@ export default function About({ embedded } = {}) {
     <div style={{ background: 'var(--color-bg-page)' }}>
       {!embedded && <Nav active="about" />}
       <PageFade>
+      <SectionPager>
       <section style={{ maxWidth: 1120, margin: '0 auto', padding: m ? '48px 20px' : '72px 32px 56px', display: 'grid', gridTemplateColumns: m ? '1fr' : '1fr 1fr', gap: m ? 28 : 56, alignItems: 'center' }}>
         <Reveal>
           <div>
@@ -59,6 +61,7 @@ export default function About({ embedded } = {}) {
           </div>
         </Reveal>
       </section>
+      </SectionPager>
       {!embedded && <Footer />}
       </PageFade>
     </div>

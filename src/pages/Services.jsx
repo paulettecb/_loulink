@@ -2,6 +2,7 @@ import React from 'react';
 import { Eyebrow, Card, Accordion } from '../design-system/components/index.js';
 import { useIsMobile } from '../hooks/useIsMobile.js';
 import { Reveal, PageFade } from '../lib/motion.jsx';
+import { SectionPager } from '../lib/SectionPager.jsx';
 import { Nav } from '../components/Nav.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { Photo } from '../components/Photo.jsx';
@@ -32,6 +33,8 @@ export default function Services({ embedded } = {}) {
     <div style={{ background: 'var(--color-bg-page)' }}>
       {!embedded && <Nav active="services" />}
       <PageFade>
+      <SectionPager>
+      <div>
       <section style={{ maxWidth: 1120, margin: '0 auto', padding: m ? '48px 20px 8px' : '72px 32px 24px' }}>
         <Eyebrow tone="accent">La experiencia</Eyebrow>
         <h1 style={{ fontFamily: 'var(--font-display)', fontSize: m ? 'var(--text-2xl)' : 'var(--text-4xl)', lineHeight: 'var(--leading-tight)', color: 'var(--color-text-primary)', margin: '16px 0 0', maxWidth: 640 }}>Tres formas de llevar tinta a tu boda — y una más, por si acaso.</h1>
@@ -39,6 +42,7 @@ export default function Services({ embedded } = {}) {
       <section style={{ maxWidth: 1120, margin: '0 auto', padding: m ? '32px 20px 56px' : '48px 32px 72px', display: 'grid', gridTemplateColumns: m ? '1fr' : 'repeat(2,1fr)', gap: m ? 16 : 24 }}>
         {offerings.map((o, i) => <Reveal key={o.title} delay={i * 130}><Card eyebrow={o.tag} title={o.title} featured={i === 0}>{o.desc}</Card></Reveal>)}
       </section>
+      </div>
       {!m && (
         <section style={{ maxWidth: 1120, margin: '0 auto', padding: '0 32px 96px', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
           {strip.map((s, i) => (
@@ -58,6 +62,7 @@ export default function Services({ embedded } = {}) {
           </Reveal>
         </div>
       </section>
+      </SectionPager>
       {!embedded && <Footer />}
       </PageFade>
     </div>
